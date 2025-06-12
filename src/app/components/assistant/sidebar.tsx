@@ -9,10 +9,10 @@ export default function Sidebar() {
       <div>
         <h2 className="text-blue-600 font-bold text-xl mb-6">Docmanager</h2>
         <nav className="space-y-4">
-          <a href="#" className="flex items-center gap-3 text-gray-700 hover:text-blue-600">
+          <a href="#" className="flex text-[14px] items-center gap-3 text-gray-700 hover:text-blue-600">
             <FaFileAlt /> Documents
           </a>
-          <a href="#" className="flex items-center gap-3 text-gray-700 hover:text-blue-600">
+          <a href="#" className="flex text-[14px] items-center gap-3 text-gray-700 hover:text-blue-600">
             <FaFolder /> Archived Documents
           </a>
           <a href="#" className="flex items-center gap-3 text-gray-700 hover:text-blue-600">

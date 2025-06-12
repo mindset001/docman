@@ -8,6 +8,7 @@ import Sky from '../../../images/sky.png'
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from '@/components/ui/dropdown-menu';
 import Image from 'next/image';
 import { FaArrowLeft } from "react-icons/fa";
+import { IoIosArrowDown } from "react-icons/io";
 
 export default function ContractReviewPage() {
     const [status, setStatus] = useState('');
@@ -26,7 +27,13 @@ export default function ContractReviewPage() {
                     <div className="flex items-center gap-4">
                         <DropdownMenu>
                             <DropdownMenuTrigger asChild>
-                                <Button variant="default">Approve & Send</Button>
+                                <div className='flex items-center gap-[1px]'>
+                                    <Button className='bg-[#007DFC]'>Approve & Send</Button>
+                                     <Button className='bg-[#007DFC]'>
+                                        <IoIosArrowDown />
+                                     </Button>
+                                </div>
+                               
                             </DropdownMenuTrigger>
                             <DropdownMenuContent>
                                 <DropdownMenuItem onClick={() => setStatus('Declined')}>Declined</DropdownMenuItem>
@@ -102,9 +109,9 @@ export default function ContractReviewPage() {
                     </div>
 
                     {/* Right - Page Previews */}
-                    <div className="hidden md:flex flex-col w-1/4 border-l pl-4 space-y-6 bg-[#F3F3F4]">
-                        <div className="p-2 rounded">
-                            <div className="bg-white p-8  rounded-md">
+                    <div className="hidden md:flex flex-col w-1/4 border-l  bg-[#F3F3F4]">
+                        <div className="p-2">
+                            <div className="bg-white px-8 py-2 ">
                                 <div className='flex items-center justify-between mb-4'>
                                     <Image src={Sky} alt='Sky Line' className="h-5 w-10 mb-4" />
                                     <p className='text-[#969696] text-[4px]'>Martynenko Marianna <br />
@@ -156,16 +163,67 @@ export default function ContractReviewPage() {
                                 </div>
 
                             </div>
-                            <p className="text-xs mb-2">Page 1</p>
-                            <div className="aspect-[3/4] bg-gray-100" />
+                            <p className="text-xs mb-2 flex justify-center text-[#333333CC] font-[600] mt-4">Page 1</p>
 
                         </div>
 
+                         <div className="p-2">
+                            <div className="bg-white px-8 py-2 ">
+                                <div className='flex items-center justify-between mb-4'>
+                                    <Image src={Sky} alt='Sky Line' className="h-5 w-10 mb-4" />
+                                    <p className='text-[#969696] text-[4px]'>Martynenko Marianna <br />
+                                        411-311-11-18 <br />
+                                        Toronto,ON <br />
+                                        Bay st 777 , U7 <br />
+                                        M6P 6S4</p>
+                                </div>
+                                <h2 className="text-[6px] font-[600] text-[#797979] mb-4">Working contract</h2>
+                                <p className="text-[#969696] text-[6px] mb-4">
+                                    This sales proposal contract is an overview of the terms and conditions governing the contractual agreement between Company A and Company B. Company A agrees to provide Company B with the goods and services outlined in this contract within the proposed timeline.
+                                </p>
+                                {/* Repeat or map full contract content here */}
+                                <div className="mt-8 flex justify-between text-gray-500">
+                                    <p className='text-[8px]'><span className='text-[4px]'>From </span>Bob Anders</p>
+                                    <p className='text-[8px]'><span className='text-[4px]'>For </span>Martynenko Marianna</p>
+                                </div>
 
-                        <div className="border shadow p-2 rounded">
-                            <p className="text-xs mb-2">Page 2</p>
-                            <div className="aspect-[3/4] bg-gray-100" />
+                                {/* Signatures Section */}
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
+                                    {/* Left - Sender */}
+                                    <div>
+
+                                        <label className="text-[6px] text-[#969696] block mb-1">Date</label>
+                                        <input
+                                            type="date"
+                                            value="03/13/2023"
+                                            className="w-full border h-[16px] rounded-[7px] px-3 py-2 text-[8px] uppercase mb-2"
+                                        />
+                                        <label className="text-[9px] text-gray-600 block mb-1">Signature</label>
+                                        <div className="w-full h-22 border rounded flex items-center justify-center">
+                                            {/* Replace this with an actual signature image or canvas if dynamic */}
+                                            <Image src="/signature-bob.png" alt="Bob's Signature" width={120} height={60} />
+                                        </div>
+                                    </div>
+
+                                    {/* Right - Recipient */}
+                                    <div>
+
+                                        <label className="text-[6px] text-[#969696] block mb-1">Date</label>
+                                        <input
+                                            type="date"
+                                            placeholder="MM/DD/YYYY"
+                                            className="w-full border rounded-[7px] h-[16px] px-3 py-2 text-[8px] uppercase mb-2"
+                                        />
+                                        <label className="text-[9px] text-gray-600 block mb-1">Signature</label>
+                                        <div className="w-full h-22 border rounded" />
+                                    </div>
+                                </div>
+
+                            </div>
+                            <p className="text-xs mb-2 flex justify-center text-[#333333CC] font-[600] mt-4">Page 2</p>
+
                         </div>
+                        
                     </div>
                 </div>
             </div>
