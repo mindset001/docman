@@ -9,7 +9,8 @@ export default function DashboardPage() {
   return (
     <div className="flex min-h-screen">
       <Sidebar />
-      <DocumentTable />
+      <ContractReviewPage/>
+      {/* <DocumentTable /> */}
     </div>
   );
 }
